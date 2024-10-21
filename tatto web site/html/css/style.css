@@ -1,0 +1,186 @@
+/* Genel stiller */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #111;
+    color: #fff;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #f0a500;
+}
+
+/* Navigasyon Menüsü */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: transparent;
+    position: fixed;
+    width: 96%;
+    z-index: 1000;
+    top: 0;
+}
+
+nav .logo h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #fff;
+}
+nav .logo img {
+    width: 120px; /* Logonun genişliğini ayarlayın */
+    height: auto; /* Oranları koruyarak yüksekliği otomatik ayarlayın */
+}
+
+nav .nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+/* Menü Mobilde Her Zaman Görünür */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 10px 17px;
+    }
+
+    nav .logo {
+        display: flex;
+        justify-content: center;
+        width: 96%;
+    }
+
+    nav .logo h1 {
+        font-size: 24px;
+        text-align: center; /* Yazıyı ortalar */
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #00000000;
+        position: fixed;
+        top: 85px; /* Menü çubuğunun altına */
+        left: 0;
+        width: 96%;
+        padding: 10px;
+        z-index: 900; /* Menü üstte olmalı */
+        display: none; /* Varsayılan olarak gizli */
+    }
+
+    .nav-menu a {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+}
+
+
+/* Menü Açıldığında Görünür */
+@media screen and (max-width: 768px) {
+    .nav-menu.nav-active {
+        display: flex;
+    }
+}
+
+/* Ana Sayfa İçerik (Hero Section) */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 60px; /* Menü yüksekliği kadar boşluk bırak */
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero .hero-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.explore-button {
+    padding: 10px 20px;
+    background-color: #f0a500;
+    font-weight: 400;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.explore-button:hover {
+    background-color: #e08d00;
+}
+
+/* Responsive Tasarım */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        display: flex; /* Menü açıldığında görünür */
+    }
+    .hero-content h2 {
+        font-size: 26px;
+       
+    }
+}
+@media screen and (max-width: 500px) {
+    .hero-content h2 {
+        font-size: 22px;
+       
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-content h2 {
+        font-size: 18px;
+       
+    }
+}
+@media screen and (max-width: 300px) {
+    .hero-content h2 {
+        font-size: 12px;
+       
+    }
+}

@@ -1,0 +1,448 @@
+/* Genel Stil Ayarları */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden; /* Yatay kaydırmayı engeller */
+   
+}
+
+/* Navigasyon Barı */
+nav {
+    background-color: #ffffff;
+    color: rgb(255, 251, 251);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 20; /* Z-index değerini yükselttik */
+}
+
+nav .logo {
+    font-size: 1.5em;
+}
+nav .logo img {
+    width: 120px; /* Logonun genişliğini ayarlayın */
+    height: auto; /* Oranları koruyarak yüksekliği otomatik ayarlayın */
+}
+
+nav .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav .menu li {
+    margin-left: 20px;
+}
+
+nav .menu a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+nav .menu a:hover {
+    color: #f0a500; /* Sarı renk */
+}
+
+/* Menü Toggle Butonu (Mobilde Görünür) */
+.menu-toggle {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    margin-right: 10px;
+    z-index: 11; /* Menü toggle butonunu da öne çıkar */
+    color:  #f0a500;
+}
+
+/* Kahraman Bölümü */
+.hero {
+    position: relative;
+    height: 85vh; /* Ekranın %70'ini kaplar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Taşan içerikleri gizler */
+}
+
+.hero-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%; /* Resim alanın tamamını kaplar */
+    object-fit: cover; /* Resmin boyutunu koruyarak alanı tamamen kaplamasını sağlar */
+    z-index: 1; /* Resmi arkada tutar */
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%; /* Yatay ortalama */
+    left: 50%; /* Dikey ortalama */
+    transform: translate(-50%, -50%); /* İçeriği tam merkeze taşır */
+    z-index: 2; /* İçeriği resmin üzerinde tutar */
+    color:#f0a500;/* Yazı rengini sarı yapar */
+    text-align: center;
+    font-size: 4vw; /* Yazı boyutunu ekrana göre ayarlar */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Resmin üzerine koyu bir katman ekler */
+    z-index: 0;
+}
+
+/* Yeni Bölüm Stilleri */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; /* Varsayılan yön */
+    padding: 50px;
+    background-color: rgb(255, 255, 255);
+
+}
+
+.video-container {
+
+    width: 24%;
+    margin-right: 60px;
+    position: relative;
+    border: 2px solid #ddd; /* Kutu kenar çizgisi */
+    padding: 5px; /* Kutu içi boşluk */
+    background-color: #120f0f; /* Kutu arka plan rengi */
+    border-radius: 10px; /* Kenarları yuvarlaştırma */
+}
+.contact-info h3 , h4{
+    color: #f0a500;
+}
+
+.background-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Video kutusunun kenarlarını yuvarlatır */
+}
+
+
+
+@media (max-width: 1246px) {
+  
+    
+    .video-container {
+        width: 500px;
+        margin-right: 10;
+    
+    }
+    
+   
+}
+.gallery img {
+  
+    border: 2px solid #ddd; /* Kutu efekti için border eklendi */
+    border-radius: 12px; /* Köşeleri yuvarlatmak için border-radius eklendi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Kutu efekti için gölge eklendi */
+}
+/* Genel stil ayarları */
+.gallery {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Slayt yüksekliği */
+ 
+}
+
+/* Genel Stiller */
+.tattoos {
+    position: relative;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+.slide-container {
+    position: relative;
+    width: 80%;
+    height: 100%; /* Yükseklik ihtiyaca göre ayarlanabilir */
+    overflow: hidden;
+    margin-top: 20px;
+    left: 10%;
+    
+}
+
+
+.slide {
+    display: none; /* Varsayılan olarak tüm slaytları gizle */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slide img, .slide video {
+    width: 100%;
+    height: 100%;
+    /* İçeriği kaplaması için */
+    -webkit-background-size: cover;
+     -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+/* Normal genişliklerde gösterilecek görüntüler */
+.slide:nth-child(1) img {
+    content: url('studio1.jpg');
+}
+
+.slide:nth-child(2) img {
+    content: url('studio2.jpg');
+}
+.slide:nth-child(4) img {
+    content: url('stüdyo8.jpg');
+}
+
+/* 600px veya daha küçük ekranlar için farklı resimler */
+@media (max-width: 600px) {
+    .slide:nth-child(1) img {
+        content: url('studio7.jpg');
+    }
+
+    .slide:nth-child(2) img {
+        content: url('studio7.jpg');
+    }
+    .slide:nth-child(4) img {
+        content: url('koltukkopya1.jpg');
+    }
+    .slide:nth-child() img {
+        content: url('studio6.jpg');
+    }
+
+}
+
+/* Modern Buton Stilleri */
+.nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    
+}
+
+.nav-button {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    color: #333;
+    font-size: 2rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background: rgba(255, 255, 255, 1);
+    color: #f0a500;
+}
+
+.nav-button.prev-button {
+    margin-left: 10px;
+}
+
+.nav-button.next-button {
+    margin-right: 10px;
+}
+/*/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #090909;
+}
+
+.footer-left,
+.footer-right {
+    width: 48%;
+}
+
+.footer-left h3,
+.footer-right h3 {
+color: whitesmoke;
+margin: 10 10px;
+}
+
+.footer-left p,
+.footer-right p {
+    margin-top: 0;
+    color: whitesmoke;
+}
+
+.footer-left .social-links {
+    margin-top: 20px;
+}
+
+.footer-left .social-links a {
+    color: whitesmoke; /* İkon rengi */
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 1.5em; /* İkon boyutu */
+}
+
+.footer-left .social-links a:hover {
+    color: #f0a500;
+}
+
+.map iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column; /* Mobilde alt alta */
+        align-items: center; /* Ortalar */
+    }
+    
+    .video-container {
+        width: 90%;
+        max-width: 500px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+  
+    .slide img, .slide video {
+        width: 100%;
+        height: 80%;
+        object-fit:unset;
+        /* İçeriği kaplaması için */
+        -webkit-background-size: cover;
+         -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    .slide-container {
+       
+        margin-top: 80px;
+      
+        
+    }
+}
+
+/* Mobil ve Tablet Görünümleri */
+@media (max-width: 768px) {
+    nav .menu {
+        display: none;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        background-color:#ffffff;
+        width: 100%;
+        flex-direction: column;
+        padding: 20px;
+        z-index: 20; /* Menü görünürken resmin üzerinde kalmasını sağlar */
+    }
+
+    nav .menu.active {
+        display: flex;
+    }
+
+    nav .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav .menu-toggle {
+        display: block;
+    }
+
+    .hero-content {
+        font-size: 8vw; /* Mobil ve tablet için daha büyük yazı */
+    }
+
+    .hero {
+        height: 60vh; /* Mobilde ekranın %60'ını kaplar */
+    }
+
+    /* Menü açıkken sayfanın kaydırılmasını engelle */
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    .hero-photo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; /* Resim alanın tamamını kaplar */
+        object-fit: cover; /* Resmin boyutunu koruyarak alanı tamamen kaplamasını sağlar */
+        z-index: 1; /* Resmi arkada tutar */
+    }
+    .nav-buttons {
+        position: absolute;
+        top: 40%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+    }
+    .nav-button.prev-button {
+        margin-left: 0px;
+    }
+    
+    .nav-button.next-button {
+        margin-right: 0px;
+    }
+}
+    @media (max-width: 767px){
+        .video-container {
+            width: 95%;
+            max-width: 400px;
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+    @media (max-width: 427px) {
+     
+        .video-container {
+            width: 93%;
+            max-width: 400px;
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+        .nav-buttons {
+            position: absolute;
+            top: 40%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .nav-button.prev-button {
+            margin-left: 0px;
+        }
+        
+        .nav-button.next-button {
+            margin-right: 0px;
+        }
+    }
+

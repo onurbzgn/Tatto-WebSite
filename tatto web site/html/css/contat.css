@@ -1,0 +1,233 @@
+/* Genel Ayarlar */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color:#f0a500;
+    background-image: url('pngtree-tattoo-artist-during-her-work-image_15904415.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #ffffff;
+    color: rgb(255, 251, 251);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 20;
+}
+
+nav .logo {
+    font-size: 1.5em;
+}
+
+nav .logo img {
+    width: 120px;
+    height: auto;
+}
+
+nav .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav .menu li {
+    margin-left: 20px;
+    margin-right: 0; /* Sağ tarafa taşmasını engellemek için */
+}
+
+nav .menu a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 5px 10px; /* Daha iyi hizalama için padding ekliyoruz */
+}
+
+nav .menu a:hover {
+    color: #f0a500;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    margin-right: 10px;
+    z-index: 11;
+    color:  #f0a500;
+}
+
+/* Arka Plan Resmi */
+.background-image {
+    background-image: url(pngtree-tattoo-artist-during-her-work-image_15904415.jpg); /* Arka plan resmi */
+    background-size: cover; /* Arka planın tam sığmasını sağlar */
+    background-position: center; /* Resmin merkezde konumlanmasını sağlar */
+    background-repeat: no-repeat; /* Resmin tekrar etmesini engeller */
+    flex: 1; /* Tüm kalan alanı kaplar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 140px; /* Navigasyon çubuğu yüksekliği kadar boşluk bırak */
+}
+
+/* İletişim Bölümü */
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    width: 100%;
+    max-width: 1200px;
+    background-color: rgba(0, 0, 0, 0); /* Yarı saydam arka plan */
+}
+
+.contact-form {
+    width: 45%;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+    margin-bottom: 15px;
+    padding: 10px 0;
+    background-color:transparent;
+    border: none;
+    color: #f0a500;
+    border-bottom: 2px solid #fff;
+    
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.contact-form button {
+    padding: 10px;
+    background-color: #f0a500; 
+    border: none;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #f8f8f8;
+}
+
+/* İletişim Bilgileri */
+.contact-info {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-info .info-box {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #fff;
+}
+
+.contact-info .info-box i {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.contact-info .info-box h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.contact-info .info-box p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .contact-form, .contact-info {
+        width: 100%;
+    }
+
+    nav .menu {
+        display: none;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        background-color:#ffffff;
+        width: 100%;
+        flex-direction: column;
+        padding: 20px;
+        z-index: 20; /* Menü görünürken resmin üzerinde kalmasını sağlar */
+    }
+
+    nav .menu.active {
+        display: flex;
+    }
+
+    nav .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav .menu-toggle {
+        display: block;
+    }
+    @media (max-width: 400px) {
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px; /* Padding'i azaltarak alanı daha iyi kullanıyoruz */
+    }
+
+    .contact-form, .contact-info {
+        width: 100%;
+        padding: 10px; /* İç boşlukları küçülterek içeriklerin sığmasını sağlıyoruz */
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 14px; /* Daha küçük font boyutu */
+        padding: 8px 0; /* Daha dar padding */
+    }
+
+    .contact-form button {
+        padding: 8px; /* Daha dar buton */
+    }
+
+    .contact-info .info-box {
+        padding: 15px; /* İçeriklerin kutulara daha iyi sığması için padding'i azaltıyoruz */
+        gap: 15px;
+    }
+
+    nav .menu {
+        top: 70px; /* Menü açıldığında daha iyi bir hizalama */
+      
+    }
+
+    nav .logo img {
+        width: 100px; /* Logoyu daha küçük ekranlar için küçültüyoruz */
+    }
+    nav{
+        width: 100%;
+    }
+
+}
+}

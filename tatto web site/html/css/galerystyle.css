@@ -1,0 +1,228 @@
+/* Genel Stil Ayarları */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    background-color: #f0a500;
+}
+
+
+/* Navigasyon Barı */
+nav {
+    background-color: #ffffff;
+    color: rgb(255, 251, 251);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 20; /* Z-index değerini yükselttik */
+}
+
+nav .logo {
+    font-size: 1.5em;
+}
+nav .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav .menu li {
+    margin-left: 20px;
+}
+
+nav .menu a {
+    color: rgb(10, 10, 10);
+    text-decoration: none;
+}
+
+nav .menu a:hover {
+    color: #f0a500;
+}
+nav .logo img {
+    width: 120px; /* Logonun genişliğini ayarlayın */
+    height: auto; /* Oranları koruyarak yüksekliği otomatik ayarlayın */
+}
+
+/* Menü Toggle Butonu (Mobilde Görünür) */
+.menu-toggle {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    margin-right: 25px;
+    z-index: 11; /* Menü toggle butonunu da öne çıkar */
+    color:  #f0a500;;
+}
+
+/* Portfolyo Bölümü */
+.portfolio {
+    padding: 20px;
+}
+
+.portfolio h2 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.video-container video {
+    width: 25%; /* Boyut küçültüldü */
+    border: 2px solid #ddd; /* Kutu efekti için border eklendi */
+    border-radius: 12px; /* Köşeleri yuvarlatmak için border-radius eklendi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Kutu efekti için gölge eklendi */
+}
+
+/* Dövmeler Bölümü */
+.tattoos {
+    padding: 10px;
+}
+
+.tattoos h2 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 30%; /* Daha küçük boyutlar */
+    height: auto;
+    border: 2px solid #ddd; /* Kutu efekti için border eklendi */
+    border-radius: 12px; /* Köşeleri yuvarlatmak için border-radius eklendi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Kutu efekti için gölge eklendi */
+    -webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+/*/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #090909;
+}
+
+.footer-left,
+.footer-right {
+    width: 48%;
+}
+
+.footer-left h3,
+.footer-right h3 {
+color: whitesmoke;
+margin: 10 10px;
+}
+
+.footer-left p,
+.footer-right p {
+    margin-top: 0;
+    color: whitesmoke;
+}
+
+.footer-left .social-links {
+    margin-top: 20px;
+}
+
+.footer-left .social-links a {
+    color: whitesmoke; /* İkon rengi */
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 1.5em; /* İkon boyutu */
+}
+
+.footer-left .social-links a:hover {
+    color: #f0a500;
+}
+
+.map iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    nav .menu {
+        display: none;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        background-color: #ffffff;
+        width: 100%;
+        flex-direction: column;
+        padding: 20px;
+        z-index: 20; /* Menü görünürken resmin üzerinde kalmasını sağlar */
+    }
+
+    nav .menu.active {
+        display: flex;
+    }
+
+    nav .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav .menu-toggle {
+        display: block;
+    }
+
+    .video-container {
+        flex-direction: column; /* Videolar alt alta sıralanacak */
+        align-items: center; /* Ortalanacak */
+    }
+
+    .video-container video {
+        width: 70%; /* Mobilde genişlik ayarlandı */
+        margin-bottom: 10px; /* Videolar arasına boşluk eklendi */
+    }
+
+
+    .gallery img {
+        width: 48%; /* Tam genişlik mobilde */
+    }
+}
+
+@media (max-width: 520px) {
+    .gallery img {
+        width: 40%; /* Maksimum iki fotoğraf yan yana görünür */
+        height: auto;
+    }
+}
+@media (max-width: 603px) {
+    .tattoos h2 {
+        text-align: center;
+        font-size: 35px;
+    }
+    .portfolio h2 {
+        text-align: center;
+        font-size: 35px;
+    }
+}
+@media (max-width: 400px) {
+    .tattoos h2 {
+        text-align: center;
+        font-size: 20px;
+    }
+    .portfolio h2 {
+        text-align: center;
+        font-size: 20px;
+    }
+}

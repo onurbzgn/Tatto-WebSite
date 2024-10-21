@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffffff 30%, #f0a500 70%);
+    height: 120vh; /* Ekran yüksekliğinin tamamını kapsaması için */
+    background-size: cover; /* Arka planın tamamının kaplanmasını sağlar */
+}
+
+
+/* Navigasyon Barı */
+nav {
+    background-color: #ffffff;
+    color: rgb(255, 251, 251);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 20; /* Z-index değerini yükselttik */
+}
+
+nav .logo {
+    font-size: 1.5em;
+}
+nav .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav .menu li {
+    margin-left: 20px;
+}
+
+nav .menu a {
+    color: rgb(10, 10, 10);
+    text-decoration: none;
+}
+
+nav .menu a:hover {
+    color: #f0a500;
+}
+nav .logo img {
+    width: 120px; /* Logonun genişliğini ayarlayın */
+    height: auto; /* Oranları koruyarak yüksekliği otomatik ayarlayın */
+}
+
+/* Menü Toggle Butonu (Mobilde Görünür) */
+.menu-toggle {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    margin-right: 25px;
+    z-index: 11; /* Menü toggle butonunu da öne çıkar */
+    color:  #f0a500;;
+    
+}
+.portfolio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 90px); /* Navigasyon barı yüksekliğini çıkararak tam ekran yapar */
+    flex-direction: column; /* İçeriği dikey olarak sıralar */
+    padding: 20px; /* Genel kenar boşlukları ekler */
+}
+
+.video-container img {
+    max-width: 80%; /* Resmin enini %80 ile sınırlandırır */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Resmi yatay olarak ortalar */
+    padding: 10px; /* Resmin etrafında boşluk oluşturur */
+}
+
+@media (max-width: 768px) {
+    .video-container img {
+        max-width: 90%; /* Küçük ekranlarda resmin enini %90 ile sınırlandırır */
+        padding: 15px; /* Küçük ekranlarda kenar boşluklarını artırır */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-container img {
+        max-width: 95%; /* Daha küçük ekranlarda resmin enini %95 ile sınırlandırır */
+        padding: 20px; /* Daha küçük ekranlarda kenar boşluklarını daha da artırır */
+    }
+}
+
+.description {
+    text-align: center;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.description h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.description p {
+    font-size: 1em;
+    color: #333;
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #090909;
+   
+}
+
+.footer-left,
+.footer-right {
+    width: 50%;
+}
+
+.footer-left h3,
+.footer-right h3 {
+color: whitesmoke;
+margin: 10 10px;
+}
+
+.footer-left p,
+.footer-right p {
+    margin-top: 0;
+    color: whitesmoke;
+}
+
+.footer-left .social-links {
+    margin-top: 20px;
+}
+
+.footer-left .social-links a {
+    color: whitesmoke; /* İkon rengi */
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 1.5em; /* İkon boyutu */
+}
+
+.footer-left .social-links a:hover {
+    color: #f0a500;
+}
+
+.map iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 10px;
+}
+@media (max-width: 325px) {
+    footer {
+        flex-direction: column; /* Elemanları alt alta diz */
+        align-items: center; /* İçerikleri ortala */
+        text-align: center; /* Yazıları ortala */
+        width: 300px;
+    }
+
+    .footer-left,
+    .footer-right {
+        width: 100%; /* Küçük ekranlarda tam genişlik */
+        margin-bottom: 10px; /* Alt kısımda boşluk bırakır */
+    }
+
+    .footer-left h3,
+    .footer-right h3 {
+        margin: 0 auto; /* Başlıkları ortala */
+    }
+
+    .footer-left p,
+    .footer-right p {
+        margin: 0 auto; /* Paragraf yazılarını ortala */
+    }
+
+    .map iframe {
+        width: 100%; /* Haritanın genişliğini %100 yap */
+    }
+}
+
+@media (max-width: 768px) {
+    nav .menu {
+        display: none;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        background-color: #ffffff;
+        width: 100%;
+        flex-direction: column;
+        padding: 20px;
+        z-index: 20; /* Menü görünürken resmin üzerinde kalmasını sağlar */
+    }
+
+    nav .menu.active {
+        display: flex;
+    }
+
+    nav .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav .menu-toggle {
+        display: block;
+    }
+}

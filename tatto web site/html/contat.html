@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/contat.css">
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="images/LOGOKOPYA.png" alt="Logo">
+        </div>
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+        <ul class="menu" id="menu">
+            <li><a href="index.html">𝓐𝓝𝓐𝓢𝓐𝓨𝓕𝓐</a></li>
+            <li><a href="galery.html">𝓟𝓞𝓡𝓣𝓕𝓞𝓛𝓨𝓞</a></li>
+            <li><a href="studio.html">𝓢𝓣𝓤̈𝓓𝓨𝓞</a></li>
+            <li><a href="hakkımızda.html">𝓗𝓐𝓚𝓚𝓘𝓜𝓘𝓩𝓓𝓐</a></li>
+            <li><a href="contat.html">𝓘̇𝓛𝓔𝓣𝓘̇𝓢̧𝓘̇𝓜</a></li>
+        </ul>
+    </nav>
+
+    <div class="background-image">
+        <section class="contact-section">
+            <div class="contact-form">
+                <form>
+                    <input type="text"  placeholder="Email" name="email" required >
+                    <input type="text" placeholder="Name" name="name" required>
+                    <input type="text" placeholder="Address" name="address" required>
+                    <textarea placeholder="Message" name="message" required></textarea>
+                    <button type="submit">GÖNDERMEK</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <div class="info-box">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>ANA OFİSİMİZ</h3>
+                    <p>Yavansu mahallesi Hüseyincan bulvarı Hasan Berat sitesi 5 Blok no:45 3B BLACKLINES TATTOO 
+                        KUŞADASI/Aydın</p>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>TELEFON NUMARASI</h3>
+                    <p>+90536-498-4628<br>+90533-696-0981</p>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-fax"></i>
+                    <h3>SOSYAL MEDYA</h3>
+                    <p>@blacklinestattootr</p>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-envelope"></i>
+                    <h3>E-POSTA</h3>
+                    <p>info@info.com</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const menu = document.getElementById('menu');
+        
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
